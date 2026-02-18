@@ -1,0 +1,31 @@
+registradores
+64 bits 32 bits utilização
+rax     eax     Valores que são retornados dos comandos em um registrador
+rbx     ebx     registrador preservado
+rcx     ecx     uso livre como por exemplo contador
+rdx     edx     uso livre em alguns comandos
+rsp     esp     ponteiro de uma pilha
+rbp     ebp     registrador preservado. As vezes armazena ponteiros de pilhas
+rsi     esi     na passagem de argumento, contém os argumentos em si
+
+Além desses existem os registradores de r8 a r15 (64 bits) e r8d a r15d (32 bits) que são utilizados nas movimentações correntes durante
+a nossa programação.
+
+O curso passa a instrução do compilador nasm como elf64 eke serve para compilar no linux no caso como estou usando windows eu utilizo o win64
+Outro detalhe no prompt ele ppassa diretamente nasm eu estou passando o nasm.exe por que meu path não quis apontar imediatamente para o .exe 
+e eu não quis reiniciar :)
+
+
+link do nasm
+https://www.nasm.us/
+
+Ou seja ficou dessa forma aqui para compilar no meu caso mas se você fizer a instalação do nasm e ele funcionar de primeira 
+C:\nasm\nasm.exe -f win64 hello.asm
+
+porém o correto seria
+nasm -f win64 hello.asm
+
+Processo: Compilar -> Linkeditar
+
+Linkeditar é transformar a linguagem de baixo nivel .obj gerado após utilizar o nasm em um executável
+ld -s -o hello hello.obj
